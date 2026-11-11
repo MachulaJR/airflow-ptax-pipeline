@@ -1,0 +1,21 @@
+[project]
+name = "airflow-ptax-pipeline"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "MachulaJR", email = "https://github.com/MachulaJR/Finance_BI.git" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "apache-airflow-providers-http>=6.4.0",
+    "apache-airflow-providers-postgres>=7.1.2",
+    "apache-airflow-providers-standard>=1.21.0",
+]
+
+[project.scripts]
+airflow = "airflow:main"
+
+[tool.uv]
+package = false
+link-mode = "copy"
