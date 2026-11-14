@@ -14,12 +14,12 @@ VALUES (
     %(qtd_registros)s,
     %(source_url)s,
     %(arquivo_origem)s,
-    %(run_id)s,
+    %(run_id)s
 )
 ON CONFLICT (moeda, data_ref) DO UPDATE SET
-    payload = EXCLUDE.payload,
-    qtd_registros = EXCLUDE.qtd_registros,
-    source_url = EXCLUDE.source_url,
-    arquivo_origem = EXCLUDE.arquivo_origem,
-    run_id = EXCLUDE.run_id,
+    payload = EXCLUDED.payload,
+    qtd_registros = EXCLUDED.qtd_registros,
+    source_url = EXCLUDED.source_url,
+    arquivo_origem = EXCLUDED.arquivo_origem,
+    run_id = EXCLUDED.run_id,
     ingested_at = now();
